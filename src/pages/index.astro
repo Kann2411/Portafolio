@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Card from '../components/Card.astro';
+import HomeTop from '../components/HomeTop.astro';
+import MarioBro from '../components/MarioBro.astro';
+import TechList from '../components/TechList.astro';
+
+const headerProps = {
+  leftImgSrc: '/assets/hacker.png',
+  leftImgAlt: 'icono de hacker',
+  rightImgSrc: '/assets/DangerDJ.png',
+  rightImgAlt: 'Peligro, Dj suelto',
+  links: [
+    { href: '/contact', label: 'Contacto' },
+    { href: '/proyects', label: 'Proyectos' },
+    { href: '/tecnologies', label: 'Tecnologias' },
+  ],
+};
+
+const homeTopProps = {
+  name: "Kristian Ferrin",
+  linksHome: [
+    {href: "#sobre-mi", label: "Sobre mi"},
+    {href: "#", label: "Curriculum"},
+  ]
+};
+
+const cardProps = {
+	title: "Sobre Mi",
+	body1: "¡Hola! Soy Kristian Kamilo Ferrin, un apasionado DJ y productor musical con una gran afinidad por la tecnología. Mi vida ha sido una fusión de dos mundos: la música y la programación. Durante años, he canalizado mi creatividad en la producción de beats y sets enérgicos que hacen vibrar a la audiencia, mientras que mi pasión por la tecnología me ha llevado a convertirme en un programador FullStack, capaz de construir experiencias digitales de principio a fin.",
+
+  body2: "Como desarrollador, tengo experiencia en la creación de aplicaciones web eficientes y dinámicas, utilizando tecnologías como React, Node.js, Express, Nest.js y TypeORM. Me especializo en el desarrollo tanto del frontend como del backend, asegurando interfaces intuitivas y sistemas robustos. Mi objetivo es construir soluciones digitales escalables y de alto rendimiento, brindando una experiencia de usuario fluida y resultados funcionales que superen expectativas."
+}
+
+
+---
+
+<Layout title="Sobre Mi" href='' body=''>
+	<main class="mx-auto w-full max-w-[1000px] px-4 text-white text-lg leading-relaxed">
+		<Header {...headerProps}/>
+		<HomeTop {...homeTopProps}/>
+		<div class="flex justify-center items-center mt-72">
+			<MarioBro />
+		</div>
+		<div id="sobre-mi" class="flex gap-8 items-center mt-80 mb-8">
+			<Card {...cardProps}/>
+		</div>
+    <div>
+      <TechList />
+    </div>
+	</main>
+</Layout>
+

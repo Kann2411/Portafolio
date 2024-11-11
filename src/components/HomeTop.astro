@@ -1,0 +1,32 @@
+---
+interface props {
+	name: string;
+	linksHome: { href: string; label: string }[];
+}
+const { name, linksHome = [] } = Astro.props;
+---
+<section class="flex-col pt-40 justify-between items-center">
+	<div class="containerImg w-80 h-80 -mt-24 flex justify-center items-center mx-auto">
+		<img src="/assets/muñeco.png" alt="Kristian Animado" class="w-full h-auto rounded-sm">
+	</div>
+	<div class="name-links flex flex-col justify-center text-center">
+		<div class="titulos">
+			<h1 class="font-[NewAmsterdam] text-[70px] text-[#370617] font-extrabold tracking-wide m-0 p-0">
+				{name}
+			</h1>
+			<h3 class="font-[NewAmsterdam] text-[30px] text-[#6a040f] mt-0.5 mb-4 p-0">
+				Desarrollador FullStack
+			</h3>
+		</div>
+		<div>
+			{linksHome.map((link: any) => (
+				<a
+					href={link.href}
+					class="font-[NewAmsterdam] tracking-wider inline-block px-6 py-3 mr-3 font-bold text-center text-[#03071e] uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-[#ffba08] to-[#d00000] leading-pro text-base ease-soft-in shadow-soft-md bg-150 bg-x-25 hover:scale-110 hover:rotate-2 hover:text-pink-200 hover:shadow-lg active:opacity-85"
+				>
+					{link.label}
+				</a>
+			))}
+		</div>
+	</div>
+</section>

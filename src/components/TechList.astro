@@ -1,0 +1,79 @@
+---
+const techList = [
+  { src: '/assets/html.svg', name: 'HTML5' },
+  { src: '/assets/nestjs.svg', name: 'NestJS' },
+  { src: '/assets/react.svg', name: 'React' },
+  { src: '/assets/css.svg', name: 'CSS3' },
+  { src: '/assets/express.svg', name: 'Express' },
+  { src: '/assets/javascript.svg', name: 'JavaScript' },
+  { src: '/assets/postgresql.svg', name: 'PostgreSQL' },
+  { src: '/assets/typescript.svg', name: 'TypeScript' },
+  { src: '/assets/typeorm.svg', name: 'TypeORM' },
+  { src: '/assets/mongodb.svg', name: 'MongoDB  ' },
+];
+---
+
+<section>
+  <h2 class="text-[#03071e] font-extrabold tracking-widem text-center mb-4 text-3xl transition-colors duration-600 ease-[cubic-bezier(0.22,1,0.36,1)]">Mis tecnologias</h2>
+  <div class="overflow-hidden">
+    <div class="flex animate-marquee gap-7 items-center">
+      {techList.map((tech) => (
+        <div class="flex flex-col items-center">
+          <img
+            src={tech.src}
+            alt={tech.name}
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-[#03071e] list-none font-[NewAmsterdam] text-lg ">{tech.name}</span>
+        </div>
+      ))}
+      {techList.map((tech) => (
+        <div class="flex flex-col items-center">
+          <img
+            src={tech.src}
+            alt={tech.name}
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-[#03071e] list-none font-[NewAmsterdam] text-lg ">{tech.name}</span>
+        </div>
+      ))}
+      {techList.map((tech) => (
+        <div class="flex flex-col items-center">
+          <img
+            src={tech.src}
+            alt={tech.name}
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-[#03071e] list-none font-[NewAmsterdam] text-lg ">{tech.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-marquee {
+    animation: marquee 90s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .flex {
+    display: flex;
+    /* Hacemos que el contenedor tenga el tamaño necesario para las imágenes duplicadas */
+    width: max-content;
+    /* Evitamos que las imágenes se enrosquen y garantizamos un flujo continuo */
+    white-space: nowrap;
+  }
+
+  .overflow-hidden {
+    padding-right: 5px;
+  }
+</style>
