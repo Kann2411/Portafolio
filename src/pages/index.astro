@@ -5,6 +5,9 @@ import Card from '../components/Card.astro';
 import HomeTop from '../components/HomeTop.astro';
 import MarioBro from '../components/MarioBro.astro';
 import TechList from '../components/TechList.astro';
+import ProjectsCards from '../components/ProjectsCards.astro';
+import Curriculum from '../components/Curriculum.astro';
+import Footer from '../components/Footer.astro';
 
 const headerProps = {
   leftImgSrc: '/assets/hacker.png',
@@ -33,6 +36,30 @@ const cardProps = {
   body2: "Como desarrollador, tengo experiencia en la creación de aplicaciones web eficientes y dinámicas, utilizando tecnologías como React, Node.js, Express, Nest.js y TypeORM. Me especializo en el desarrollo tanto del frontend como del backend, asegurando interfaces intuitivas y sistemas robustos. Mi objetivo es construir soluciones digitales escalables y de alto rendimiento, brindando una experiencia de usuario fluida y resultados funcionales que superen expectativas."
 }
 
+const projects = [
+  {
+    title: 'FitZone',
+    description: 'FitZone es una plataforma de gestión de turnos diseñada específicamente para gimnasios, que permite optimizar la experiencia de usuarios, entrenadores y administradores.',
+    image: '/assets/FitZone.PNG',
+    link: 'https://fitzzone.vercel.app'
+  },
+  {
+    title: 'E-commerce Api',
+    description: 'Una Api para E-commerce con carrito de compras, registro de usuarios y manejo de roles. Documentacion implementada con Swagger UI',
+    image: '/assets/ecommerce.PNG',
+  },
+  {
+    title: 'Dragon Ball Api',
+    description: 'Es una API que ofrece información detallada sobre los personajes de todas las sagas de Dragon Ball. Este proyecto fue desarrollado en colaboración con una amiga, quien se encargó de la creación y diseño del frontend, mientras yo me ocupé de la estructura y funcionamiento de la API en el backend.',
+    image: '/assets/dragonBall.PNG',
+    link: 'https://dragon-ball-uwu.vercel.app/'
+  },
+  {
+    title: 'Gestor de turnos Estetica Animal',
+    description: 'Proyecto Full Stack de Gestor de turnos para Estetica Animal, con sistema de registro de usuarios y turnos',
+    image: '/assets/ferlee.PNG'
+  }
+];
 
 ---
 
@@ -46,9 +73,16 @@ const cardProps = {
 		<div id="sobre-mi" class="flex gap-8 items-center mt-80 mb-8">
 			<Card {...cardProps}/>
 		</div>
-    <div>
+    <div id="TechList" class="mt-6">
       <TechList />
     </div>
+    <div class="mt-40">
+      <Curriculum />
+    </div>
+    <div class="mt-40">
+      <ProjectsCards projects={projects} />
+    </div>
+    <Footer />
 	</main>
 </Layout>
 
