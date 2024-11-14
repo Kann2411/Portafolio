@@ -8,6 +8,7 @@ import TechList from '../components/TechList.astro';
 import ProjectsCards from '../components/ProjectsCards.astro';
 import Curriculum from '../components/Curriculum.astro';
 import Footer from '../components/Footer.astro';
+import Contact from '../components/Contact.astro';
 
 const headerProps = {
   leftImgSrc: '/assets/hacker.png',
@@ -15,18 +16,9 @@ const headerProps = {
   rightImgSrc: '/assets/DangerDJ.png',
   rightImgAlt: 'Peligro, Dj suelto',
   links: [
-    { href: '/contact', label: 'Contacto' },
-    { href: '/proyects', label: 'Proyectos' },
-    { href: '/tecnologies', label: 'Tecnologias' },
+    { href: '#curriculum', label: 'Contacto' },
+    { href: '#projects', label: 'Proyectos' },
   ],
-};
-
-const homeTopProps = {
-  name: "Kristian Ferrin",
-  linksHome: [
-    {href: "#sobre-mi", label: "Sobre mi"},
-    {href: "#", label: "Curriculum"},
-  ]
 };
 
 const cardProps = {
@@ -66,20 +58,23 @@ const projects = [
 <Layout title="Sobre Mi" href='' body=''>
 	<main class="mx-auto w-full max-w-[1000px] px-4 text-white text-lg leading-relaxed">
 		<Header {...headerProps}/>
-		<HomeTop {...homeTopProps}/>
+		<HomeTop />
 		<div class="flex justify-center items-center mt-72">
 			<MarioBro />
 		</div>
 		<div id="sobre-mi" class="flex gap-8 items-center mt-80 mb-8">
-			<Card {...cardProps}/>
+      <Card {...cardProps}/>
 		</div>
     <div id="TechList" class="mt-6">
       <TechList />
     </div>
-    <div class="mt-40">
+    <div id="curriculum" class="mt-60">
       <Curriculum />
     </div>
-    <div class="mt-40">
+    <div id="contact" class="mt-5 mb-10">
+      <Contact />
+    </div>
+    <div id="projects" class="mt-44">
       <ProjectsCards projects={projects} />
     </div>
     <Footer />

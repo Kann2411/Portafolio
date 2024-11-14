@@ -1,0 +1,40 @@
+---
+const socialLinks = [
+  {
+    href: "www.linkedin.com/in/kristian-ferrin-583976270",
+    label: "LinkedIn",
+    icon: "/assets/linkedin.svg",
+  },
+  {
+    href: "https://github.com/Kann2411",
+    label: "GitHub",
+    icon: "/assets/github.svg",
+  },
+  {
+    href: "mailto:yosoykann@gmail.com",
+    label: "Email",
+    icon: "/assets/gmail.svg",
+  },
+];
+---
+
+<section>
+  <div class="flex flex-col items-center gap-6 p-8">
+    <h2 class="text-2xl text-[#03071e] font-extrabold">Contacta conmigo</h2>
+    <div class="flex gap-6">
+      {
+        socialLinks.map((link) => (
+          <a
+            href={link.href}
+            aria-label={link.label}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition-transform transform hover:scale-110"
+          >
+            <img src={link.icon} alt={link.label} class="w-8 h-8" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
