@@ -9,6 +9,7 @@ import ProjectsCards from '../components/ProjectsCards.astro';
 import Curriculum from '../components/Curriculum.astro';
 import Footer from '../components/Footer.astro';
 import Contact from '../components/Contact.astro';
+import SectionDivider from '../components/SectionDivider.astro'
 
 const headerProps = {
   leftImgSrc: '/assets/hacker.png',
@@ -68,15 +69,18 @@ const projects = [
     <div id="TechList" class="mt-6">
       <TechList />
     </div>
-    <div id="curriculum" class="mt-60">
+    <SectionDivider />
+    <div id="curriculum" class="mt-5 pt-40">
       <Curriculum />
     </div>
     <div id="contact" class="mt-5 mb-10">
       <Contact />
     </div>
-    <div id="projects" class="mt-44">
+    <SectionDivider />
+    <div id="projects" class="mt-52">
       <ProjectsCards projects={projects} />
     </div>
+    <SectionDivider />
     <Footer />
 	</main>
 </Layout>
